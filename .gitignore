@@ -1,0 +1,32 @@
+# dependencies
+/node_modules
+
+# next.js build output
+/.next/
+/out/
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# env & secrets — never commit
+.env
+.env.local
+.env*.local
+
+# server secrets (real API key lives here; only config.example.php is committed)
+/public/config.php
+config.php
+
+# planning / design scratch — not part of the shipped site
+/.design-ref/
+/docs/superpowers/
+/Wayfinding Signage System/
+curbnit-site-content-new.md
+
+# local QA artifacts
+.playwright-mcp/
+
+# misc
+*.log
+.DS_Store
+
+# NOTE: site photos in public/images/ ARE committed (do not ignore *.jpeg/*.png).
