@@ -224,7 +224,7 @@ function Benefits() {
               purpose="Reflective curb at night"
               photoStyle="Dusk / night photo, headlight glow on reflective paint"
               composition="Reflective house number lit up on a dim street"
-              src="/images/homepage_benefits_new.png"
+              src="/images/homepage_benefits_new.png?v=2"
             />
             <div style={{ position: "absolute", left: "-6%", bottom: "-7%" }}>
               <CurbBlock number="824" reflective tag width="180px" numSize="2.2rem" style={{ boxShadow: "var(--shadow-lg)" }} />
