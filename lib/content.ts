@@ -75,7 +75,7 @@ export const home = {
   hiring: {
     eyebrow: "Now hiring",
     heading: "Paint curbs with Curb'n IT.",
-    body: "Curb'n IT is bringing on door-to-door sales representatives across Oregon. Flexible hours, outdoor work, paid per job. No experience needed.",
+    body: "Curb'n IT is bringing on sales reps across Oregon. Flexible hours, outdoor work, paid per job. No experience needed.",
     cta: { label: "See the role", href: "/recruitment/" },
   },
   about: {

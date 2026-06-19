@@ -342,7 +342,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 .grid-gal .ph__img,
 .cols-4 .ph__img {
-  object-fit: contain !important;
+  object-fit: cover !important;
+  object-position: bottom !important;
 }
 
 /* ============================================================

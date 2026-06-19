@@ -46,7 +46,7 @@ function Hero() {
         style={{ display: "grid", gridTemplateColumns: "minmax(0,1.05fr) minmax(0,0.95fr)", gap: "clamp(32px,5vw,72px)", alignItems: "center" }}
       >
         <div>
-          <Reveal><Eyebrow>Curb address painting · Oregon</Eyebrow></Reveal>
+          <Reveal><Eyebrow>Address curb painting · Oregon</Eyebrow></Reveal>
           <Reveal delay={60}>
             <h1 className="display h1" style={{ marginTop: 22 }}>
               {h.headlineLead.trim()}<br />{h.headlineAccent}<br />
@@ -227,7 +227,7 @@ function Benefits() {
               src="/images/homepage_benefits_new.png"
             />
             <div style={{ position: "absolute", left: "-6%", bottom: "-7%" }}>
-              <CurbBlock number="824" reflective tag width="180px" numSize="2.2rem" style={{ boxShadow: "var(--shadow-lg)" }} />
+              <CurbBlock number="248" reflective tag width="180px" numSize="2.2rem" style={{ boxShadow: "var(--shadow-lg)" }} />
             </div>
           </div>
         </Reveal>
