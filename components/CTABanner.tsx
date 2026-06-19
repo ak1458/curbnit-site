@@ -17,7 +17,7 @@ export function CTABanner() {
               background: "var(--ink)",
               color: "var(--paper)",
               borderRadius: "calc(var(--radius) + 8px)",
-              padding: "clamp(34px,5vw,68px)",
+              padding: "clamp(22px, 5vw, 68px)",
               position: "relative",
               overflow: "hidden",
             }}
@@ -27,7 +27,7 @@ export function CTABanner() {
                 <h2 className="display h2" style={{ color: "var(--paper)" }}>{c.heading}</h2>
                 <p style={{ color: "oklch(0.97 0.006 84 / 0.72)", fontSize: "1.15rem", marginTop: 14 }}>{c.sub}</p>
               </div>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: 10, flexWrap: "nowrap", alignItems: "center" }}>
                 <Button kind="accent" size="lg" href={callHref} arrow>{c.primary.label}</Button>
                 <Button kind="ghost" size="lg" href={c.secondary.href}>
                   <span style={{ color: "var(--paper)" }}>{c.secondary.label}</span>
