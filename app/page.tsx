@@ -227,7 +227,7 @@ function Benefits() {
               src="/images/homepage_benefits_new.png"
             />
             <div style={{ position: "absolute", left: "-6%", bottom: "-7%" }}>
-              <CurbBlock number="248" reflective tag width="180px" numSize="2.2rem" style={{ boxShadow: "var(--shadow-lg)" }} />
+              <CurbBlock number="824" reflective tag width="180px" numSize="2.2rem" style={{ boxShadow: "var(--shadow-lg)" }} />
             </div>
           </div>
         </Reveal>
