@@ -334,6 +334,17 @@ button { font-family: inherit; cursor: pointer; }
 .gal-cap .loc { font-weight: 600; font-size: 0.95rem; }
 .gal-cap .typ { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-ink); }
 
+/* Prevent cropping of gallery and home page teaser images */
+.grid-gal .ph,
+.cols-4 .ph {
+  background-image: none !important;
+  background-color: var(--ink) !important;
+}
+.grid-gal .ph__img,
+.cols-4 .ph__img {
+  object-fit: contain !important;
+}
+
 /* ============================================================
    CONTACT FORM
    ============================================================ */

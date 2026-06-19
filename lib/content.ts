@@ -34,7 +34,7 @@ export const home = {
     headlineLead: "Your address, ",
     headlineAccent: "clearly painted.",
     headlineTail: " Every time.",
-    sub: "Oregon's go-to curb address painter — door-to-door across Portland, Beaverton, Tigard, Tualatin, Lake Oswego and surrounding areas since 2020. Fast, fair, done on the spot.",
+    sub: "Oregon's go-to Address curb painter — door-to-door across Portland, Beaverton, Tigard, Tualatin, Lake Oswego and surrounding areas since 2020. Fast, fair, done on the spot.",
     // primary renders as a Call Now button; href is the fallback when no phone is set.
     primary: { label: "Call Now", href: "/contact/" },
     secondary: { label: "See the Work", href: "/gallery/" },
@@ -75,7 +75,7 @@ export const home = {
   hiring: {
     eyebrow: "Now hiring",
     heading: "Paint curbs with Curb'n IT.",
-    body: "Curb'n IT is bringing on door-to-door painters across Oregon. Flexible hours, outdoor work, paid per job. No experience needed.",
+    body: "Curb'n IT is bringing on door-to-door sales representatives across Oregon. Flexible hours, outdoor work, paid per job. No experience needed.",
     cta: { label: "See the role", href: "/recruitment/" },
   },
   about: {
@@ -198,19 +198,19 @@ export const about = {
 // ── RECRUITMENT --------------------------------------------------
 export const recruitment = {
   seo: {
-    title: "Join Curb'n IT — Curb Painter Jobs in Oregon",
+    title: "Join Curb'n IT — Sales Rep Jobs in Oregon",
     description:
-      "Curb'n IT is hiring door-to-door curb address painters across Oregon. Flexible hours, outdoor work, paid per job. No experience needed — apply today.",
+      "Curb'n IT is hiring sales reps across Oregon. Flexible hours, outdoor work, paid per job. No experience needed — apply today.",
   },
   hero: {
     eyebrow: "Now hiring",
     heading: "Paint curbs. Set your own pace.",
-    sub: "Curb'n IT is bringing on door-to-door curb address painters across Oregon. No experience needed — if you can talk to people and show up, you can earn.",
+    sub: "Curb'n IT is bringing on sales reps across Oregon. No experience needed — if you can talk to people and show up, you can earn.",
   },
   whatYouDo: {
     heading: "What the work is",
     items: [
-      "Knock doors in Oregon neighborhoods and offer curb address painting",
+      "Knock doors in Oregon neighborhoods and offer Address curb painting",
       "Paint house numbers on curbs — quick training, simple kit",
       "Set your own hours and the areas you want to cover",
       "Get paid per job, no cap on how much you take on",
