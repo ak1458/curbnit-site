@@ -11,7 +11,7 @@ export const nav = {
     { label: "Services", href: "/services/" },
     { label: "Gallery", href: "/gallery/" },
     { label: "About", href: "/about/" },
-    { label: "Recruitment", href: "/recruitment/" },
+    { label: "Join Us", href: "/recruitment/" },
     { label: "Contact", href: "/contact/" },
   ],
   // CTA renders as a "Call Now" button (tel: link) in the Nav.
@@ -187,6 +187,7 @@ export const about = {
     heading: "The short version.",
     paragraphs: [
       "Curb'n IT isn't a corporation. The name's a joke — kind of.",
+      "The name gets attention. The work gets referrals.",
       "It started in 2020: knocking doors across Oregon, painting faded curb numbers fresh again. People liked the work, liked the price, and kept calling back.",
       "Now it's a full-time operation across the state — Portland, Beaverton, Tigard, Tualatin, Lake Oswego, wherever the next address needs painting.",
       "You pay after it's done. If you don't like it, you say so, and it gets made right.",
@@ -204,8 +205,8 @@ export const recruitment = {
   },
   hero: {
     eyebrow: "Now hiring",
-    heading: "Paint curbs. Set your own pace.",
-    sub: "Curb'n IT is bringing on sales reps across Oregon. No experience needed — if you can talk to people and show up, you can earn.",
+    heading: "Join the Curb’n IT Team",
+    sub: "We’re looking for motivated, outgoing people to help grow our curb painting business. Flexible schedule, training provided, and unlimited earning potential. No experience necessary. Complete the form below and we’ll reach out with more information.",
   },
   whatYouDo: {
     heading: "What the work is",

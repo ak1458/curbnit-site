@@ -6,7 +6,7 @@ export type ContactFields = {
   contact: string; // phone OR email
   message: string;
   education?: string;
-  over18?: string;
+  driversLicense?: string;
   lookingFor?: string;
   startNextWeek?: string;
   sales?: string;

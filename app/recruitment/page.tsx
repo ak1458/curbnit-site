@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/Button";
 import { Placeholder } from "@/components/Placeholder";
 import { Icon } from "@/components/Icon";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: recruitment.seo.title,
@@ -29,7 +30,7 @@ export default function RecruitmentPage() {
             <Reveal delay={170}>
               <div style={{ display: "flex", gap: 12, marginTop: 30, flexWrap: "wrap" }}>
                 <Button kind="primary" size="lg" href={callHref} arrow>Call Now</Button>
-                <Button kind="ghost" size="lg" href="/contact/?type=join">Apply</Button>
+                <Button kind="ghost" size="lg" href="#apply-form">Apply</Button>
               </div>
             </Reveal>
           </div>
@@ -62,17 +63,18 @@ export default function RecruitmentPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section--tight" style={{ paddingBottom: "clamp(56px,7vw,96px)" }}>
-        <div className="wrap">
+      {/* Form Section */}
+      <section id="apply-form" className="section--tight" style={{ paddingBottom: "clamp(56px,7vw,96px)", paddingTop: "clamp(24px,4vw,48px)" }}>
+        <div className="wrap" style={{ maxWidth: 680 }}>
           <Reveal>
-            <div style={{ background: "var(--ink)", color: "var(--paper)", borderRadius: "calc(var(--radius) + 8px)", padding: "clamp(34px,5vw,68px)", textAlign: "center" }}>
-              <h2 className="display h2" style={{ color: "var(--paper)" }}>{recruitment.cta.heading}</h2>
-              <p style={{ color: "oklch(0.97 0.006 84 / 0.72)", fontSize: "1.1rem", marginTop: 14, maxWidth: "56ch", marginInline: "auto" }}>{recruitment.cta.sub}</p>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginTop: 28 }}>
-                <Button kind="accent" size="lg" href={callHref} arrow>Call Now</Button>
-                <Button kind="ghost" size="lg" href="/contact/?type=join"><span style={{ color: "var(--paper)" }}>Apply via contact form</span></Button>
-              </div>
+            <div style={{ textAlign: "center", marginBottom: 32 }}>
+              <h2 className="display h2">{recruitment.cta.heading}</h2>
+              <p className="muted" style={{ marginTop: 10 }}>{recruitment.cta.sub}</p>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="card" style={{ background: "oklch(1 0 0 / 0.6)", boxShadow: "var(--shadow-card)" }}>
+              <ContactForm defaultMode="join" />
             </div>
           </Reveal>
         </div>

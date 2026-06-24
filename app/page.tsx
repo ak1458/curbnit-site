@@ -138,9 +138,6 @@ function SocialProof() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={120}>
-          <p className="muted" style={{ fontSize: "0.84rem", marginTop: 18 }}>★ Sample quotes — real customer reviews coming soon.</p>
-        </Reveal>
       </div>
     </section>
   );

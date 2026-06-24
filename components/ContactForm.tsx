@@ -7,22 +7,31 @@ import { validateForm, validateField, type ContactFields, type Errors } from "@/
 import { Button } from "./Button";
 import { Icon } from "./Icon";
 
-const EMPTY: ContactFields = { name: "", address: "", contact: "", message: "", education: "", over18: "", lookingFor: "", startNextWeek: "", sales: "", rejection: "", personality: "", referredBy: "", heardAbout: "" };
+const EMPTY: ContactFields = { name: "", address: "", contact: "", message: "", education: "", driversLicense: "", lookingFor: "", startNextWeek: "", sales: "", rejection: "", personality: "", referredBy: "", heardAbout: "" };
 type Status = "idle" | "loading" | "success" | "error";
 
-export function ContactForm() {
+interface ContactFormProps {
+  defaultMode?: "contact" | "join";
+}
+
+export function ContactForm({ defaultMode = "contact" }: ContactFormProps) {
   const [fields, setFields] = useState<ContactFields>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof ContactFields, boolean>>>({});
   const [status, setStatus] = useState<Status>("idle");
-  const [mode, setMode] = useState<"contact" | "join">("contact");
+  const [mode, setMode] = useState<"contact" | "join">(defaultMode);
   const honeypot = useRef<HTMLInputElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
-      if (params.get("type") === "join") setMode("join");
+      const type = params.get("type");
+      if (type === "join") {
+        setMode("join");
+      } else if (type === "contact") {
+        setMode("contact");
+      }
     }
   }, []);
 
@@ -60,7 +69,7 @@ export function ContactForm() {
     if (mode === "join") {
       finalMessage = [
         fields.education ? `Educational Background: ${fields.education}` : "",
-        fields.over18 ? `Over 18: ${fields.over18}` : "",
+        fields.driversLicense ? `Drivers license and car: ${fields.driversLicense}` : "",
         fields.lookingFor ? `Looking For: ${fields.lookingFor}` : "",
         fields.startNextWeek ? `Start Next Week: ${fields.startNextWeek}` : "",
         fields.sales ? `Open to Sales: ${fields.sales}` : "",
@@ -147,10 +156,10 @@ export function ContactForm() {
             </select>
           </Field>
 
-          <Field id="over18" label="Are you at least 18 or turning 18 within the next 30 days?">
+          <Field id="driversLicense" label="Do you have a drivers license and a car?">
             <div style={{ display: "flex", gap: "16px" }}>
-              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}><input type="radio" name="over18" checked={fields.over18 === "YES"} onChange={() => set("over18", "YES")} /> YES</label>
-              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}><input type="radio" name="over18" checked={fields.over18 === "NO"} onChange={() => set("over18", "NO")} /> NO</label>
+              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}><input type="radio" name="driversLicense" checked={fields.driversLicense === "YES"} onChange={() => set("driversLicense", "YES")} /> YES</label>
+              <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer" }}><input type="radio" name="driversLicense" checked={fields.driversLicense === "NO"} onChange={() => set("driversLicense", "NO")} /> NO</label>
             </div>
           </Field>
 

@@ -34,8 +34,14 @@ export const metadata: Metadata = {
     title: home.seo.title,
     description: home.seo.description,
     url: siteUrl,
+    images: [{ url: "/images/logo.png" }],
   },
-  twitter: { card: "summary_large_image", title: home.seo.title, description: home.seo.description },
+  twitter: { 
+    card: "summary_large_image", 
+    title: home.seo.title, 
+    description: home.seo.description,
+    images: ["/images/logo.png"],
+  },
   robots: { index: true, follow: true },
 };
 
