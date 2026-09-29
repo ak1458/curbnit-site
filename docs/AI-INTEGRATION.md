@@ -5,7 +5,7 @@ The site ships with a branded chat assistant ("Jimmy's helper"). It works in thr
 1. **FAQ-first (always on, free):** common questions — pricing, areas, timing, payment, custom work,
    weather, "what if I don't like it" — are answered instantly from `lib/faq.ts`. No account, no key,
    no cost, no network call.
-2. **Live AI (optional):** anything not in the FAQ is sent to an AI provider (Grok or OpenRouter) for
+2. **Live AI (optional):** anything not in the FAQ is sent to an AI provider (Grok or Groq) for
    a short, on-brand answer. Only runs if you add a key.
 3. **Lead capture:** when someone signals they want a quote, the assistant shows a "Get a quote from
    Jimmy →" button that deep-links to the contact form.
@@ -26,13 +26,13 @@ If no key is set, layer 2 is skipped and the assistant politely points people to
    NEXT_PUBLIC_GROK_MODEL=grok-2-latest
    ```
 
-### Option B — OpenRouter (access many models, incl. Grok)
-1. Get a key at <https://openrouter.ai/keys>.
+### Option B — Groq (free tier, very fast)
+1. Get a key at <https://console.groq.com/keys> (free, no card needed).
 2. In `.env.local`:
    ```
-   NEXT_PUBLIC_AI_PROVIDER=openrouter
-   NEXT_PUBLIC_OPENROUTER_API_KEY=sk-or-xxxxxxxx
-   NEXT_PUBLIC_OPENROUTER_MODEL=x-ai/grok-2-1212
+   NEXT_PUBLIC_AI_PROVIDER=groq
+   NEXT_PUBLIC_GROQ_API_KEY=gsk_xxxxxxxx
+   NEXT_PUBLIC_GROQ_MODEL=openai/gpt-oss-120b
    ```
 
 Then `npm run build` and re-upload `out/`.
@@ -58,15 +58,14 @@ reaches the browser.
 1. Add an `ai` block to `config.php` (on Hostinger):
    ```php
    'ai' => [
-     'endpoint' => 'https://api.x.ai/v1/chat/completions',
-     'model'    => 'grok-2-latest',
-     'key'      => 'xai-your-real-key',
+     'endpoint' => 'https://api.groq.com/openai/v1/chat/completions',
+     'model'    => 'openai/gpt-oss-120b',
+     'key'      => 'gsk_your-real-key',
    ],
    ```
-2. In `.env.local`, point the endpoint at the proxy and leave the public key blank:
+2. In `.env.local`, set the provider to proxy (this is already the default):
    ```
-   NEXT_PUBLIC_GROK_ENDPOINT=/chat.php
-   NEXT_PUBLIC_GROK_API_KEY=
+   NEXT_PUBLIC_AI_PROVIDER=proxy
    ```
 3. `npm run build` → re-upload. The browser now talks only to `chat.php`; the key stays private.
 

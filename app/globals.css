@@ -484,3 +484,74 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 560px) {
   .cols-4 { grid-template-columns: 1fr !important; }
 }
+
+/* ============================================================
+   ELEMENTOR ORGANIC PHOTO MASK (from original Curb'n IT site)
+   Recreates the bespoke asymmetrical leaf/pebble mask shape
+   found in the original Elementor stylesheet (border-radius: 3% 3% 3% 40%)
+   with a warm curb-yellow brand accent backdrop.
+   ============================================================ */
+.photo-mask {
+  position: relative;
+  max-width: 340px;
+  width: 100%;
+}
+
+/* Decorative backdrop layer echoing Oregon curb painting yellow accent */
+.photo-mask__backdrop {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px 28px 28px 140px;
+  background: linear-gradient(135deg, var(--accent) 0%, oklch(0.88 0.12 92 / 0.45) 100%);
+  transform: translate(12px, 12px);
+  z-index: 0;
+  opacity: 0.85;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1), opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.photo-mask:hover .photo-mask__backdrop {
+  transform: translate(16px, 16px);
+  opacity: 1;
+}
+
+/* The masked photo container */
+.photo-mask__frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 3/4;
+  /* Original Elementor about page radius: 3% 3% 3% 40% (4% 4% 4% 45%) */
+  border-radius: 24px 24px 24px 130px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -10px oklch(0.21 0.01 66 / 0.18), 0 4px 14px oklch(0.21 0.01 66 / 0.08);
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+}
+
+.photo-mask__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.photo-mask:hover .photo-mask__img {
+  transform: scale(1.035);
+}
+
+/* Alternative mask variants */
+.photo-mask--arch .photo-mask__frame,
+.photo-mask--arch .photo-mask__backdrop {
+  border-radius: 160px 160px 24px 24px;
+}
+.photo-mask--arch-inverted .photo-mask__frame,
+.photo-mask--arch-inverted .photo-mask__backdrop {
+  border-radius: 24px 24px 160px 160px;
+}
+.photo-mask--blob .photo-mask__frame,
+.photo-mask--blob .photo-mask__backdrop {
+  border-radius: 58% 42% 38% 62% / 42% 58% 42% 58%;
+}

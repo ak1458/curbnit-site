@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ai, flags, form } from "@/lib/config";
+import { ai, flags, form, business } from "@/lib/config";
 import { matchFaq, isQuoteIntent } from "@/lib/faq";
 import { Icon } from "./Icon";
 
 type Msg = { role: "bot" | "user"; text: string; cta?: boolean };
 
 const GREETING =
-  "Hey — I'm the Curb'n IT assistant. Ask me about pricing, areas, or how curb painting works.";
+  "Hey — I'm the Curb’n IT assistant. Ask me about pricing, areas, or how curb painting works.";
 
 const SUGGESTIONS = ["Get a quote", "How much does it cost?", "What's reflective?", "Do you cover my area?"];
 
@@ -51,7 +51,7 @@ export function ChatAssistant() {
         return;
       }
       pushBot(
-        "I don't have that one handy — Curb'n IT can answer for sure. Send it through the contact form and you'll get a text back, usually within a few hours.",
+        "I don't have that one handy — Curb’n IT can answer for sure. Send it through the contact form and you'll get a text back, usually within a few hours.",
         true,
       );
       return;
@@ -83,7 +83,14 @@ export function ChatAssistant() {
       });
       const data = await res.json();
       let reply = data?.choices?.[0]?.message?.content?.trim() || "";
-      
+      if (!reply && data?.error) {
+        console.error("AI provider error:", data.error);
+        if (data.error === "rate_limited" || res.status === 429) {
+          pushBot("You've reached the message limit for now. Please wait a little while, or text/call Jimmy directly at " + business.phone + " for immediate assistance!", true);
+          return;
+        }
+      }
+
       if (reply.includes("[ACTION: SUBMIT]")) {
         reply = reply.replace("[ACTION: SUBMIT]", "").trim();
         pushBot(reply || "Got it! I've sent your details to Jimmy. He'll reach out shortly.", false);
@@ -93,7 +100,7 @@ export function ChatAssistant() {
         const useWeb3 = form.mode === "web3forms" && form.web3formsKey;
         const leadUrl = useWeb3 ? form.web3formsEndpoint : form.phpEndpoint;
         const leadBody = useWeb3
-          ? { ...lead, access_key: form.web3formsKey, subject: "New Curb'n IT chat lead", from_name: "Curb'n IT Chatbot" }
+          ? { ...lead, access_key: form.web3formsKey, subject: "New Curb’n IT chat lead", from_name: "Curb’n IT Chatbot" }
           : lead;
         fetch(leadUrl, {
           method: "POST",
@@ -103,9 +110,9 @@ export function ChatAssistant() {
         return;
       }
 
-      pushBot(reply || "I'll have Curb'n IT reach out on that one.", quote || !reply);
+      pushBot(reply || "I'll have Curb’n IT reach out on that one.", quote || !reply);
     } catch {
-      pushBot("Something glitched on my end. Use the contact form and Curb'n IT will get right back to you.", true);
+      pushBot("Something glitched on my end. Use the contact form and Curb’n IT will get right back to you.", true);
     } finally {
       setLoading(false);
     }
@@ -127,7 +134,7 @@ export function ChatAssistant() {
   return (
     <>
       {!open && (
-        <button className="ai-fab" onClick={() => setOpen(true)} aria-label="Open the Curb'n IT assistant">
+        <button className="ai-fab" onClick={() => setOpen(true)} aria-label="Open the Curb’n IT assistant">
           <span className="ai-fab__pulse">{Icon.chat({ s: 20 })}</span>
           <span className="ai-fab__txt">
             <b>Ask the assistant</b>
@@ -137,11 +144,11 @@ export function ChatAssistant() {
       )}
 
       {open && (
-        <div className="ai-panel" role="dialog" aria-label="Curb'n IT assistant">
+        <div className="ai-panel" role="dialog" aria-label="Curb’n IT assistant">
           <div className="ai-head">
             <div className="ai-head__av">IT</div>
             <div className="ai-head__t">
-              <b>Curb&apos;n IT Assistant</b>
+              <b>Curb’n IT Assistant</b>
               <span>{ai.hasKey ? "Online · answers instantly" : "FAQ answers · we reply personally"}</span>
             </div>
             <button className="ai-x" onClick={() => setOpen(false)} aria-label="Close">{Icon.x({})}</button>
@@ -157,7 +164,7 @@ export function ChatAssistant() {
                   className="btn btn--primary btn--sm"
                   style={{ alignSelf: "flex-start" }}
                 >
-                  Get a quote from Curb&apos;n IT {Icon.arrow({ s: 15 })}
+                  Get a quote from Curb’n IT {Icon.arrow({ s: 15 })}
                 </Link>
               ) : (
                 <div key={i} className={"ai-msg " + (m.role === "user" ? "me" : "bot")}>

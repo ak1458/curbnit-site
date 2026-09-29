@@ -35,7 +35,7 @@ export function GalleryGrid() {
         <div className="card" style={{ textAlign: "center", padding: "64px 24px" }}>
           <h3 className="h3">{gallery.empty.heading}</h3>
           <p className="body-p" style={{ margin: "10px auto 20px" }}>{gallery.empty.body}</p>
-          <Button kind="primary" href="/contact/" arrow>Contact Curb&apos;n IT</Button>
+          <Button kind="primary" href="/contact/" arrow>Contact Curb’n IT</Button>
         </div>
       ) : (
         <div className="grid-gal">

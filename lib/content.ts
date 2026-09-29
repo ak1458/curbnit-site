@@ -26,9 +26,9 @@ export const footer = {
 // ── HOME ---------------------------------------------------------
 export const home = {
   seo: {
-    title: "Curb'n IT — Curb Address Painting in Portland & All of Oregon",
+    title: "Curb’n IT — Curb Address Painting in Portland & All of Oregon",
     description:
-      "Curb'n IT paints house address numbers on curbs across Oregon. Portland, Beaverton, Tigard, Tualatin, Lake Oswego and surrounding areas. Fast, affordable, done the same day.",
+      "Curb’n IT paints house address numbers on curbs across Oregon. Portland, Beaverton, Tigard, Tualatin, Lake Oswego and surrounding areas. Fast, affordable, done the same day.",
   },
   hero: {
     headlineLead: "Your address, ",
@@ -43,8 +43,8 @@ export const home = {
     eyebrow: "What people say",
     heading: "Real jobs, real neighbors.",
     items: [
-      { quote: "Highly recommend Curb'n IT’s service’s to everyone. Handled very professionally and you can see the quality in the work.", where: "Paul B." },
-      { quote: "Now the ambulance will always be able to find our house thanks to the work of Curb'n IT.", where: "Doug I." },
+      { quote: "Highly recommend Curb’n IT’s services to everyone. Handled very professionally and you can see the quality in the work.", where: "Paul B." },
+      { quote: "Now the ambulance will always be able to find our house thanks to the work of Curb’n IT.", where: "Doug I." },
       { quote: "Used to always get the neighbors Amazon packages but now with our neighborhood curbs painted, there should be no issue.", where: "Christine W." },
     ],
   },
@@ -52,7 +52,7 @@ export const home = {
     eyebrow: "The process",
     heading: "Simple as it gets.",
     steps: [
-      { n: "01", title: "Curb'n IT knocks your door", body: "Give a yes or a no. No pressure, no obligation." },
+      { n: "01", title: "Curb’n IT knocks your door", body: "Give a yes or a no. No pressure, no obligation." },
       { n: "02", title: "Your address gets painted on the spot", body: "Takes 15–20 minutes. You watch the whole thing." },
       { n: "03", title: "Pay when you're happy", body: "Cash or Venmo/Zelle. Your call, after you see the result." },
     ],
@@ -74,16 +74,16 @@ export const home = {
   },
   hiring: {
     eyebrow: "Now hiring",
-    heading: "Paint curbs with Curb'n IT.",
-    body: "Curb'n IT is bringing on sales reps across Oregon. Flexible hours, outdoor work, paid per job. No experience needed.",
+    heading: "Paint curbs with Curb’n IT.",
+    body: "Curb’n IT is bringing on sales reps across Oregon. Flexible hours, outdoor work, paid per job. No experience needed.",
     cta: { label: "See the role", href: "/recruitment/" },
   },
   about: {
     eyebrow: "Who's painting your curb",
     quote:
-      "Curb'n IT has been knocking doors and painting curbs across Oregon since 2020. No corporate runaround — just a fair price and clean work, done while you watch.",
+      "Curb’n IT has been knocking doors and painting curbs across Oregon since 2020. No corporate runaround — just a fair price and clean work, done while you watch.",
     credentials: ["Oregon-based", "Door-to-Door Since 2020", "Pay When It's Done"],
-    cta: { label: "About Curb'n IT", href: "/about/" },
+    cta: { label: "About Curb’n IT", href: "/about/" },
   },
   finalCta: {
     heading: "Ready to get your address painted?",
@@ -96,13 +96,13 @@ export const home = {
 // ── SERVICES ----------------------------------------------------
 export const services = {
   seo: {
-    title: "Services — Curb'n IT Oregon Curb Painting",
+    title: "Services — Curb’n IT Oregon Curb Painting",
     description:
-      "Standard, reflective, and custom curb address painting across Oregon. Call Curb'n IT for a fast, no-obligation quote on your address.",
+      "Standard, reflective, and custom curb address painting across Oregon. Call Curb’n IT for a fast, no-obligation quote on your address.",
   },
   hero: {
     heading: "Curb address painting, done right.",
-    sub: "Standard, reflective, or custom — call for a quick quote and Curb'n IT confirms the price before any paint touches the curb.",
+    sub: "Standard, reflective, or custom — call for a quick quote and Curb’n IT confirms the price before any paint touches the curb.",
   },
   tiers: [
     {
@@ -139,13 +139,13 @@ export const services = {
     eyebrow: "Common questions",
     heading: "Frequently asked questions",
     items: [
-      { q: "What areas do you cover?", a: "Curb'n IT paints curbs across Oregon — Portland, Beaverton, Tigard, Tualatin, Lake Oswego, and surrounding areas. If you're not sure your area is covered, just ask." },
-      { q: "How much does it cost?", a: "Price depends on size, location, and number of digits. Call Curb'n IT and you'll get a quick, no-obligation quote — the price quoted at your door is the price you pay." },
+      { q: "What areas do you cover?", a: "Curb’n IT paints curbs across Oregon — Portland, Beaverton, Tigard, Tualatin, Lake Oswego, and surrounding areas. If you're not sure your area is covered, just ask." },
+      { q: "How much does it cost?", a: "Price depends on size, location, and number of digits. Call Curb’n IT and you'll get a quick, no-obligation quote — the price quoted at your door is the price you pay." },
       { q: "How long does the job take?", a: "About 15–20 minutes per address. It's done while you watch, so there's no waiting around or scheduling a return visit." },
       { q: "What if it rains right after painting?", a: "The paint is designed to handle Oregon weather, but you'll be told on the day if conditions aren't ideal, and the job can be rescheduled if needed." },
-      { q: "Do you paint the whole block or just my house?", a: "Just your address, unless you'd like to coordinate with neighbors — Curb'n IT is happy to do multiple houses on the same street in one visit." },
+      { q: "Do you paint the whole block or just my house?", a: "Just your address, unless you'd like to coordinate with neighbors — Curb’n IT is happy to do multiple houses on the same street in one visit." },
       { q: "Can I pay after it's done?", a: "Yes. You watch the work happen, and you pay once you're happy with the result. Cash or Venmo/Zelle." },
-      { q: "What if I don't like the result?", a: "Curb'n IT makes it right. The price isn't due until you're satisfied with the work." },
+      { q: "What if I don't like the result?", a: "Curb’n IT makes it right. The price isn't due until you're satisfied with the work." },
     ],
   },
 } as const;
@@ -153,7 +153,7 @@ export const services = {
 // ── GALLERY (spec "Work") ---------------------------------------
 export const gallery = {
   seo: {
-    title: "Curb Painting Photos — Before & After | Curb'n IT Oregon",
+    title: "Curb Painting Photos — Before & After | Curb’n IT Oregon",
     description:
       "See real before-and-after curb address painting jobs from Portland, Beaverton, Tigard, Tualatin, Lake Oswego and surrounding areas.",
   },
@@ -161,7 +161,7 @@ export const gallery = {
   filters: ["All", "Portland", "Beaverton", "Tigard", "Tualatin", "Lake Oswego", "Other"],
   empty: {
     heading: "No photos here yet",
-    body: "New jobs are added all the time. Check back soon, or contact Curb'n IT for a quote on your address.",
+    body: "New jobs are added all the time. Check back soon, or contact Curb’n IT for a quote on your address.",
   },
   // Placeholder job set — replace captions/cities when real photos arrive.
   jobs: [
@@ -169,7 +169,7 @@ export const gallery = {
     { city: "Beaverton", neighborhood: "Central", type: "Standard", src: "/images/WhatsApp_Image_2026-06-15_at_10.45.10_PM22.jpeg" },
     { city: "Lake Oswego", neighborhood: "First Addition", type: "Reflective", src: "/images/WhatsApp_Image_2026-06-15_at_10.45.51_PM22.jpeg" },
     { city: "Tigard", neighborhood: "Bull Mountain", type: "Standard", src: "/images/WhatsApp_Image_2026-06-15_at_10.45.32_PM21.jpeg" },
-    { city: "Portland", neighborhood: "Sellwood", type: "Standard", src: "/images/WhatsApp_Image_2026-06-16_at_9.33.38_PM.jpeg" },
+    { city: "Tualatin", neighborhood: "Nyberg Woods", type: "Standard", src: "/images/WhatsApp_Image_2026-06-16_at_9.33.38_PM.jpeg" },
     { city: "Tualatin", neighborhood: "Nyberg Woods", type: "Standard", src: "/images/WhatsApp_Image_2026-06-16_at_9.33.38_PM_1.jpeg" },
   ],
 } as const;
@@ -177,16 +177,15 @@ export const gallery = {
 // ── ABOUT --------------------------------------------------------
 export const about = {
   seo: {
-    title: "About Curb'n IT — Oregon Curb Painting",
+    title: "About Curb’n IT — Oregon Curb Painting",
     description:
-      "Curb'n IT paints house address numbers on curbs across Oregon. Door-to-door since 2020, serving Portland, Beaverton, Tigard, Tualatin, Lake Oswego and surrounding areas.",
+      "Curb’n IT paints house address numbers on curbs across Oregon. Door-to-door since 2020, serving Portland, Beaverton, Tigard, Tualatin, Lake Oswego and surrounding areas.",
   },
   heroQuote: "Started with a knock. Still knocking.",
-  heroAttribution: "— Curb'n IT, Oregon",
+  heroAttribution: "— Curb’n IT, Oregon",
   story: {
     heading: "The short version.",
     paragraphs: [
-      "Curb'n IT isn't a corporation. The name's a joke — kind of.",
       "The name gets attention. The work gets referrals.",
       "It started in 2020: knocking doors across Oregon, painting faded curb numbers fresh again. People liked the work, liked the price, and kept calling back.",
       "Now it's a full-time operation across the state — Portland, Beaverton, Tigard, Tualatin, Lake Oswego, wherever the next address needs painting.",
@@ -196,12 +195,47 @@ export const about = {
   },
 } as const;
 
+// ── CEO / LEADERSHIP DESCRIPTIVE PROFILE ────────────────────────
+export const ceoProfile = {
+  seo: {
+    title: "About Jimmy Li — Chief Executive Officer | Curb’n IT Oregon",
+    description:
+      "Meet Jimmy Li, the Chief Executive Officer and founder behind Curb’n IT. Founded in 2020, licensed and insured, serving homeowners across Oregon.",
+  },
+  heroQuote: "Started with a knock. Still knocking.",
+  heroAttribution: "— Jimmy Li, Founder & CEO",
+  story: {
+    eyebrow: "Leadership · Founder & CEO",
+    heading: "Meet Jimmy Li",
+    subheading: "Founder & Chief Executive Officer",
+    image: "/images/profile.png",
+    executiveProfile: {
+      title: "Executive Profile",
+      items: [
+        { label: "Role", value: "Founder & CEO" },
+        { label: "Founded", value: "November 2020" },
+        { label: "Business", value: "Licensed & Insured LLC" },
+        { label: "Service Area", value: "Oregon-Wide" },
+      ],
+    },
+    paragraphs: [
+      "Jimmy Li is the Chief Executive Officer for Curb’n IT. He founded Curb’n IT in November of 2020. In March 2021 he established his LLC, got licensed and insured. Jimmy Li was born in Plymouth, Minnesota but moved to Oregon at the young age of six. Jimmy Li attended Lakeridge High school in Lake Oswego, Oregon. In high school Jimmy Li was the Lakeridge varsity men's basketball team manager. He developed leadership, communication, and management skills through this position. In college Jimmy studied business at the University of Oregon and discovered his passion for sales when working for Cutco Cutlery where he was awarded one of the top sales reps in the Northwest region after his impressive feat of doing over ten-thousand dollars in company revenue in his first ten days.",
+      "Currently, Jimmy Li oversees all the operations side of the business and has a very \"hands-on\" approach to running the everyday activities of Curb’n IT. This includes leading the sales team, handling public relations, communicating with the marketing team, maintaining customer relationships, hiring employees and managing resources. He stays active on the job and is always looking to improve company performance. Jimmy Li is very focused and passionate about personal development and workforce development, to achieve the best version of yourself.",
+      "Jimmy Li's education includes studies of business with a focus on entrepreneurship. When not working Jimmy Li likes to go to the gym, play basketball, spend quality time with family and travelling.",
+    ],
+    signoff: "Jimmy Li",
+    signoffTitle: "Founder & Chief Executive Officer",
+    stats: ["Founded Nov 2020", "Licensed & Insured", "Oregon-Wide"],
+    badges: ["Founded Nov 2020", "Licensed & Insured", "Oregon Native"],
+  },
+} as const;
+
 // ── RECRUITMENT --------------------------------------------------
 export const recruitment = {
   seo: {
-    title: "Join Curb'n IT — Sales Rep Jobs in Oregon",
+    title: "Join Curb’n IT — Sales Rep Jobs in Oregon",
     description:
-      "Curb'n IT is hiring sales reps across Oregon. Flexible hours, outdoor work, paid per job. No experience needed — apply today.",
+      "Curb’n IT is hiring sales reps across Oregon. Flexible hours, outdoor work, paid per job. No experience needed — apply today.",
   },
   hero: {
     eyebrow: "Now hiring",
@@ -237,26 +271,30 @@ export const recruitment = {
   },
   cta: {
     heading: "Ready to start?",
-    sub: "Call Curb'n IT to ask anything, or send your info through the contact form and you'll get a callback — usually within a few hours.",
+    sub: "Call Curb’n IT to ask anything, or send your info through the contact form and you'll get a callback — usually within a few hours.",
   },
 } as const;
 
 // ── CONTACT ------------------------------------------------------
 export const contact = {
   seo: {
-    title: "Contact Curb'n IT — Get a Curb Painting Quote in Oregon",
+    title: "Contact Curb’n IT — Get a Curb Painting Quote in Oregon",
     description:
-      "Get in touch with Curb'n IT for curb address painting anywhere in Oregon. Same-day response, no obligation quotes.",
+      "Get in touch with Curb’n IT for curb address painting anywhere in Oregon. Same-day response, no obligation quotes.",
   },
-  hero: { heading: "Get in touch.", sub: "Call now, or fill this out and Curb'n IT will respond same day, usually within a few hours." },
+  hero: { heading: "Get in touch.", sub: "Call now, or fill this out and Curb’n IT will respond same day, usually within a few hours." },
+  joinHero: {
+    heading: "Join the Curb’n IT Team",
+    sub: "We are looking for outgoing people to help grow our curb painting business. Flexible schedule, training provided, and unlimited earning potential. No experience is necessary. Complete the form below and we will reach out with more information.",
+  },
   labels: {
     name: "Your Name",
     address: "Your Address (where you want the curb painted)",
-    contact: "Phone or Email",
+    contact: "Phone Number",
     message: "Anything else? (optional)",
     submit: "Send Message",
     helper: "Usually responds within a few hours.",
   },
-  success: { heading: "Got it. Curb'n IT will reach out soon.", subPrefix: "In the meantime — you can also text directly: " },
+  success: { heading: "Got it. Curb’n IT will reach out soon.", subPrefix: "In the meantime — you can also text directly: " },
   sidePanel: { heading: "Other ways to get in touch" },
 } as const;

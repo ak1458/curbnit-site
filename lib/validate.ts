@@ -3,7 +3,7 @@
 export type ContactFields = {
   name: string;
   address: string;
-  contact: string; // phone OR email
+  contact: string; // phone number only
   message: string;
   education?: string;
   driversLicense?: string;
@@ -18,12 +18,7 @@ export type ContactFields = {
 
 export type Errors = Partial<Record<keyof ContactFields, string>>;
 
-const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRe = /^[+]?[\d][\d\s().-]{6,}$/;
-
-export function isEmail(v: string): boolean {
-  return emailRe.test(v.trim());
-}
 
 export function isPhone(v: string): boolean {
   return phoneRe.test(v.trim());
@@ -38,7 +33,7 @@ export function validateField(field: keyof ContactFields, value: string, mode: "
     case "address":
       return v.length < 5 ? (mode === "join" ? "Enter your city or neighborhood." : "Enter the address where you want the curb painted.") : undefined;
     case "contact":
-      return isEmail(v) || isPhone(v) ? undefined : "Enter a valid phone number or email.";
+      return isPhone(v) ? undefined : "Please enter a valid phone number.";
     case "message":
       return undefined; // optional
   }

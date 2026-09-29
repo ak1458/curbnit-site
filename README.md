@@ -20,7 +20,7 @@ server framework to manage. Live at **https://curbit.us**.
 | Language | TypeScript (strict, `noUncheckedIndexedAccess`) |
 | Styling | Tailwind CSS v3 (tokens in `tailwind.config.ts`) |
 | Forms | [Web3Forms](https://web3forms.com) — client-side POST, no server |
-| AI chat | `public/chat.php` proxy → OpenRouter (key server-side in `config.php`) |
+| AI chat | `public/chat.php` proxy → Groq (key server-side in `config.php`) |
 | Hosting | Hostinger shared hosting — upload the `out/` folder to `public_html/` |
 
 Almost everything you'd change lives in **one file**: [`lib/config.ts`](lib/config.ts).
@@ -57,7 +57,7 @@ npm run build                # static export → ./out
 - `chat.php` reads the API key from `config.php` (git-ignored, blocked from the web by
   `.htaccess`) and forwards the request to the LLM provider.
 - The key is **never** in the JavaScript bundle.
-- Toggle modes with `NEXT_PUBLIC_AI_PROVIDER`: `proxy` (default, secure) · `openrouter`/`grok`
+- Toggle modes with `NEXT_PUBLIC_AI_PROVIDER`: `proxy` (default, secure) · `groq`/`grok`
   (direct calls — local testing only, exposes the key).
 
 ---
@@ -118,7 +118,7 @@ docs/           # configuration / deploy / SEO / maintenance guides
 - [x] Contact form wired to Web3Forms
 - [x] AI key moved server-side (proxy mode)
 - [ ] Web3Forms recipient inbox confirmed in the dashboard
-- [ ] Real OpenRouter key rotated if the old one was ever exposed
+- [ ] Real Groq key rotated if the old one was ever exposed
 - [ ] Real phone / Venmo confirmed in `lib/config.ts`
 - [ ] Real testimonials in `lib/content.ts` (or set `flags.showTestimonials = false`)
 - [ ] `npm run build` → upload `out/` → test the form + a chat question on the live domain

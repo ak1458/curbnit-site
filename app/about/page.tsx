@@ -5,6 +5,7 @@ import { SectionHead } from "@/components/SectionHead";
 import { Reveal } from "@/components/Reveal";
 import { Placeholder } from "@/components/Placeholder";
 import { CTABanner } from "@/components/CTABanner";
+import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
   title: about.seo.title,
@@ -44,12 +45,15 @@ export default function AboutPage() {
           <div>
             <Reveal><SectionHead eyebrow="About" title={about.story.heading} /></Reveal>
             <Reveal delay={120}>
-              <div style={{ marginTop: 28, maxWidth: "340px", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-card)" }}>
-                <img
-                  src="/images/profile.png"
-                  alt="Jimmy Li headshot"
-                  style={{ width: "100%", height: "100%", aspectRatio: "3/4", objectFit: "cover", objectPosition: "top center" }}
-                />
+              <div className="photo-mask" style={{ marginTop: 28 }}>
+                <div className="photo-mask__backdrop" aria-hidden="true" />
+                <div className="photo-mask__frame">
+                  <img
+                    src="/images/profile.png"
+                    alt="Jimmy Li headshot"
+                    className="photo-mask__img"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
@@ -58,6 +62,11 @@ export default function AboutPage() {
               {about.story.paragraphs.map((p, i) => (
                 <p key={p.slice(0, 24)} style={{ margin: 0, ...(i === about.story.paragraphs.length - 1 ? { color: "var(--ink)", fontWeight: 600 } : {}) }}>{p}</p>
               ))}
+              <div style={{ marginTop: 24 }}>
+                <Button kind="primary" href="/about/ceo/" arrow>
+                  Learn More About CEO
+                </Button>
+              </div>
             </div>
           </Reveal>
         </div>

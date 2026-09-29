@@ -6,11 +6,11 @@ import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
 
 export const metadata: Metadata = {
-  title: contact.seo.title,
-  description: contact.seo.description,
+  title: "Join the Curb’n IT Team — Curb’n IT Oregon",
+  description: contact.joinHero.sub,
 };
 
-export default function ContactPage() {
+export default function JoinPage() {
   const tel = telHref();
   const phoneShown = business.phone.includes("[") ? "Phone coming soon" : business.phone;
   const hasVenmo = !business.venmo.includes("[");
@@ -28,7 +28,7 @@ export default function ContactPage() {
         <div className="wrap stack-mobile" style={{ display: "grid", gridTemplateColumns: "minmax(0,1.25fr) minmax(0,0.75fr)", gap: "clamp(28px,4vw,56px)", alignItems: "start" }}>
           <Reveal>
             <div className="card" style={{ background: "oklch(1 0 0 / 0.6)" }}>
-              <ContactForm showHero />
+              <ContactForm defaultMode="join" showHero />
             </div>
           </Reveal>
 

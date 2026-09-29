@@ -6,15 +6,18 @@ import { form as formConfig, business, telHref } from "@/lib/config";
 import { validateForm, validateField, type ContactFields, type Errors } from "@/lib/validate";
 import { Button } from "./Button";
 import { Icon } from "./Icon";
+import { Eyebrow } from "./Eyebrow";
+import { Reveal } from "./Reveal";
 
 const EMPTY: ContactFields = { name: "", address: "", contact: "", message: "", education: "", driversLicense: "", lookingFor: "", startNextWeek: "", sales: "", rejection: "", personality: "", referredBy: "", heardAbout: "" };
 type Status = "idle" | "loading" | "success" | "error";
 
 interface ContactFormProps {
   defaultMode?: "contact" | "join";
+  showHero?: boolean;
 }
 
-export function ContactForm({ defaultMode = "contact" }: ContactFormProps) {
+export function ContactForm({ defaultMode = "contact", showHero = false }: ContactFormProps) {
   const [fields, setFields] = useState<ContactFields>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof ContactFields, boolean>>>({});
@@ -103,8 +106,21 @@ export function ContactForm({ defaultMode = "contact" }: ContactFormProps) {
     );
   }
 
+  const heroHeading = mode === "join" ? contact.joinHero.heading : contact.hero.heading;
+  const heroSub = mode === "join" ? contact.joinHero.sub : contact.hero.sub;
+
   return (
-    <form ref={formRef} onSubmit={submit} noValidate>
+    <>
+      {showHero && (
+        <section className="section--tight" style={{ paddingTop: "clamp(48px,6vw,96px)", paddingBottom: "clamp(28px,3vw,44px)" }}>
+          <div className="wrap">
+            <Reveal><div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}><span style={{ width: 28, height: 3, background: "var(--accent)", borderRadius: 2, display: "inline-block" }} /><span style={{ fontSize: "0.82rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "var(--ink-2)" }}>Contact</span></div></Reveal>
+            <Reveal delay={50}><h1 className="display h1" style={{ marginTop: 18, maxWidth: "16ch" }}>{heroHeading}</h1></Reveal>
+            {heroSub && <Reveal delay={110}><p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>{heroSub}</p></Reveal>}
+          </div>
+        </section>
+      )}
+      <form ref={formRef} onSubmit={submit} noValidate>
       <div style={{ display: "flex", gap: "16px", marginBottom: "24px", justifyContent: "center" }}>
         <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer", fontWeight: 600 }}>
           <input type="radio" name="formMode" checked={mode === "contact"} onChange={() => { setMode("contact"); setErrors({}); setTouched({}); }} />
@@ -136,7 +152,7 @@ export function ContactForm({ defaultMode = "contact" }: ContactFormProps) {
 
       <Field id="contact" label={contact.labels.contact} error={touched.contact ? errors.contact : undefined}>
         <input
-          id="contact" name="contact" type="text" autoComplete="email" placeholder="So Curb'n IT can get back to you"
+          id="contact" name="contact" type="tel" autoComplete="tel" placeholder="e.g. (503) 555-0123"
           value={fields.contact} onChange={(e) => set("contact", e.target.value)} onBlur={() => blur("contact")}
           data-invalid={!!(touched.contact && errors.contact)}
           className={"input" + (touched.contact && errors.contact ? " err" : "")}
@@ -231,11 +247,12 @@ export function ContactForm({ defaultMode = "contact" }: ContactFormProps) {
 
       {status === "error" && (
         <p className="err-msg" style={{ textAlign: "center", marginTop: 12 }}>
-          Something went wrong. Try again, or text Curb&apos;n IT directly at {business.phone}.
+          Something went wrong. Try again, or text Curb’n IT directly at {business.phone}.
         </p>
       )}
       <p className="muted" style={{ textAlign: "center", fontSize: "0.85rem", marginTop: 12, marginBottom: 0 }}>{contact.labels.helper}</p>
     </form>
+    </>
   );
 }
 
@@ -269,8 +286,8 @@ async function sendLead(payload: ContactFields): Promise<boolean> {
     return post(web3formsEndpoint, {
       ...payload,
       access_key: web3formsKey,
-      subject: "New Curb'n IT website lead",
-      from_name: "Curb'n IT Website",
+      subject: "New Curb’n IT website lead",
+      from_name: "Curb’n IT Website",
     });
   }
 

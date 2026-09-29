@@ -14,8 +14,13 @@
 return [
   // AI chat proxy — used by chat.php. The browser talks only to /chat.php.
   'ai' => [
-    'endpoint' => 'https://openrouter.ai/api/v1/chat/completions',
-    'model'    => 'openai/gpt-oss-120b:free',
-    'key'      => 'YOUR_OPENROUTER_API_KEY_HERE',
+    'endpoint'       => 'https://api.groq.com/openai/v1/chat/completions',
+    // Fast & reliable Oregon curb assistant model.
+    'model'          => 'qwen/qwen3.8-27b',
+    // Only used if the primary model call fails (bad response, timeout, etc).
+    'model_fallback' => 'openai/gpt-oss-20b',
+    'key'            => 'YOUR_GROQ_API_KEY_HERE',
+    // Per-IP cap so nobody can burn through the free Groq quota.
+    'rate_limit'     => ['max' => 60, 'window' => 3600],
   ],
 ];

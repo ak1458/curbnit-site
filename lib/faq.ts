@@ -16,13 +16,13 @@ export const knowledgeBase: FaqEntry[] = [
     id: "areas",
     keywords: [["area"], ["areas"], ["cover"], ["where"], ["location"], ["portland"], ["beaverton"], ["tigard"], ["tualatin"], ["lake", "oswego"], ["oregon"], ["near", "me"]],
     answer:
-      "Curb'n IT paints curbs across Oregon — Portland, Beaverton, Tigard, Tualatin, Lake Oswego, and surrounding areas. Not sure you're covered? Just ask.",
+      "Curb’n IT paints curbs across Oregon — Portland, Beaverton, Tigard, Tualatin, Lake Oswego, and surrounding areas. Not sure you're covered? Just ask.",
   },
   {
     id: "price",
     keywords: [["price"], ["cost"], ["how", "much"], ["pricing"], ["rate"], ["charge"], ["$"]],
     answer:
-      "Price depends on the job — size, location, and number of digits. Call Curb'n IT for a quick, no-obligation quote. The price quoted at your door is the price you pay.",
+      "Price depends on the job — size, location, and number of digits. Call Curb’n IT for a quick, no-obligation quote. The price quoted at your door is the price you pay.",
   },
   {
     id: "time",
@@ -38,7 +38,7 @@ export const knowledgeBase: FaqEntry[] = [
     id: "custom",
     keywords: [["custom"], ["logo"], ["logos"], ["flag"], ["flags"], ["design"], ["shape"], ["hoa"]],
     answer:
-      "Yes — flags, logos, shapes, HOA or multi-property jobs are all doable. Tell Curb'n IT what you have in mind and you'll get a quote.",
+      "Yes — flags, logos, shapes, HOA or multi-property jobs are all doable. Tell Curb’n IT what you have in mind and you'll get a quote.",
   },
   {
     id: "weather",
@@ -49,7 +49,7 @@ export const knowledgeBase: FaqEntry[] = [
   {
     id: "dislike",
     keywords: [["don't", "like"], ["dont", "like"], ["guarantee"], ["warranty"], ["unhappy"], ["redo"], ["bad"]],
-    answer: "Curb'n IT makes it right — the price isn't due until you're satisfied with the result.",
+    answer: "Curb’n IT makes it right — the price isn't due until you're satisfied with the result.",
   },
   {
     id: "reflective",
@@ -61,7 +61,7 @@ export const knowledgeBase: FaqEntry[] = [
     id: "what",
     keywords: [["what", "do"], ["what", "is"], ["curb", "paint"], ["address", "number"], ["service"]],
     answer:
-      "Curb'n IT paints your house address numbers onto your curb so your home is easy to spot. Standard or reflective, done on the spot.",
+      "Curb’n IT paints your house address numbers onto your curb so your home is easy to spot. Standard or reflective, done on the spot.",
   },
 ];
 

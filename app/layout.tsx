@@ -30,17 +30,29 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Curb'n IT",
+    siteName: "Curb’n IT",
     title: home.seo.title,
     description: home.seo.description,
     url: siteUrl,
-    images: [{ url: "/images/logo.png" }],
+    images: [
+      {
+        url: `${siteUrl}/images/logo.png`,
+        width: 1200,
+        height: 630,
+        alt: "Curb’n IT — Curb Address Painting in Oregon",
+      },
+    ],
   },
-  twitter: { 
-    card: "summary_large_image", 
-    title: home.seo.title, 
+  twitter: {
+    card: "summary_large_image",
+    title: home.seo.title,
     description: home.seo.description,
-    images: ["/images/logo.png"],
+    images: [
+      {
+        url: `${siteUrl}/images/logo.png`,
+        alt: "Curb’n IT — Curb Address Painting in Oregon",
+      },
+    ],
   },
   robots: { index: true, follow: true },
 };

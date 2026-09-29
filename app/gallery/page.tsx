@@ -15,7 +15,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="The work"
         title={gallery.hero.heading}
-        sub={`${gallery.hero.sub} (Placeholders below — real before/after job photos drop in here.)`}
+        sub={gallery.hero.sub}
       />
       <section className="section--tight" style={{ paddingTop: 8 }}>
         <div className="wrap">
